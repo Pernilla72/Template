@@ -1,0 +1,15 @@
+﻿global using Template.Helper.MediatR;
+global using Template.Model;
+global using MediatR;
+global using Template.Graphql.Mutation;
+global using Template.Graphql.Query;
+global using Template.MediatR.Commands;
+global using System.Reflection;
+global using System;
+global using Template.MediatR.Query;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Threading;
+global using System.Threading.Tasks;
+global using FluentValidation;
+global using FluentValidation.AspNetCore;
