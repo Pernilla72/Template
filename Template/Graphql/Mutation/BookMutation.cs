@@ -18,9 +18,9 @@ public class BookMutation
         return await mediator.Send(new DeleteBookCommand(id));
     }
 
-    public async Task<Book> UpdateBook([Service] ISender mediator, int Id)
+    public async Task<Book> UpdateBook([Service] ISender mediator, UpdateBookCommand request)
     {
-        return await mediator.Send(new UpdateBookCommand(Id));
+        return await mediator.Send(request);
     }
 }
 

@@ -12,12 +12,14 @@ public class GetBookHandler : IRequestHandler<GetBookQuery, Book>
 
     public Task<Book> Handle(GetBookQuery request, CancellationToken cancellationToken)
     {
+        //Hämtar böcker
         Book book = GetBook(request);
         return Task.FromResult(book);
     }
 
-   public Book GetBook(GetBookQuery request)
+    public Book GetBook(GetBookQuery request)
     {
+        //Hämtar första boken som matchar
         return _booksOne.FirstOrDefault(p => p.Id == request.Id);
     }
 }

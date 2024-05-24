@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.1" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.4" />
@@ -19,6 +15,10 @@
     <PackageReference Include="HotChocolate.Types.Scalars" Version="13.9.4" />
     <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="UmbracoCms.Core" Version="8.18.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace Template.MediatR.Handlers;
 
-    public class GetAuthorByIdQueryHandler : IRequestHandler<GetAuthorByIdQuery, Author>
+    public class GetAuthorByIdHandler : IRequestHandler<GetAuthorByIdQuery, Author>
     { 
     private readonly List<Author> _authors = new List<Author>
         {
@@ -21,5 +21,4 @@
             return _authors.FirstOrDefault(a => a.Id == request.Id);
         }
     }
-
 

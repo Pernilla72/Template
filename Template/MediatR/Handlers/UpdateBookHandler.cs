@@ -12,9 +12,9 @@ public class UpdateBookHandler : IRequestHandler<UpdateBookCommand, Book>
     public Task<Book> Handle(UpdateBookCommand request, CancellationToken cancellationToken)
     {
         var book = _booksOne.FirstOrDefault(b => b.Id == request.Id);
-        if (_booksOne == null) 
+        if (book == null) 
         { 
-        throw new Exception("Book is not found");
+            throw new Exception("Book is not found");
         }
 
         book.IsAvailable = request.IsAvailable;
