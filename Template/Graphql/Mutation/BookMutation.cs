@@ -1,6 +1,8 @@
 ﻿namespace Template.Graphql.Mutation;
 
 [ExtendObjectType("Mutation")]
+
+//En mutation ändrar/uppdaterar något i en databas. 
 public class BookMutation
 {
     public async Task<Book> CreateBook([Service] ISender mediator, CreateBookCommand request)

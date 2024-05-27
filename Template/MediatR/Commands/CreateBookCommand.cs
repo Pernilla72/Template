@@ -1,5 +1,6 @@
 ﻿namespace Template.MediatR.Commands;
-//Ett kommando för att initiera skapandet av en ny bok, med hjälp av ID
+
+//Command fungerar som request objekt, Fyll i vad du vill ha som request och sen returneras ett objekt "Book" via IRequestWrapper från Handler-klassen.
 public class CreateBookCommand : IRequestWrapper<Book>
 {
     public required int Id { get; set; }

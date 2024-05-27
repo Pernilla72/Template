@@ -1,6 +1,7 @@
 ﻿namespace Template.MediatR.Handlers;
 
-//En hanterare som skapar en ny bok, returnerar svaret till command och skapar en ny bok??
+//En Handler som heter CreateBookHandler. Den tar in ett kommand från CreateBookCommand och returnerar ett
+//new objekt av Book-typ.
 public class CreateBookHandler : IRequestHandler<CreateBookCommand, Book>
 {
     private readonly List<Book> _books = new List<Book>();
