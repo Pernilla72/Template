@@ -7,7 +7,7 @@ public class UpdateBookHandler : IRequestHandler<UpdateBookCommand, Book>
             new Book { Id = 1, IsAvailable = true},
             new Book { Id = 2, IsAvailable = false},
             new Book { Id = 3, IsAvailable= false},
-            // Add more fake products as needed
+            //// Lägg till fler fake Book's om det behövs
         };
     public Task<Book> Handle(UpdateBookCommand request, CancellationToken cancellationToken)
     {

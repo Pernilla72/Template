@@ -1,9 +1,12 @@
 ﻿namespace Template.Graphql.Query;
 
 [ExtendObjectType("Query")]
+
+//Denna klass innehåller mina GraphQl-frågor & en liten lista med användare för dessa frågor.
 public class TestQuery
 {
-
+    //En beskrivning som skrivs ut i Banana Cake Pop under schema reference
+    [GraphQLDescription("Skapar en bok med dessa attribut")]
     public Book GetBook()
     {
         return new Book
@@ -32,6 +35,9 @@ public class TestQuery
         };
     }
 
+
+
+    //MIn lilla "Lista" med användare och sen lite frågor om dessa.
     public List<User> _users = new List<User>
         {
             new User { Name = "Alice", Role = UserRole.Guest },
@@ -51,11 +57,13 @@ public class TestQuery
     }
 
 
+
     [GraphQLDescription("hämta alla användare som finns registrerade")]
     public List<User> GetAllUsers()
     {
         return _users.ToList();
     }
+
 
     [GraphQLDescription("hämta första användaren av en viss specad roll")]
     public User? GetFirstUser(UserRole role)
@@ -64,6 +72,8 @@ public class TestQuery
         return a;
     }
 
+
+    [GraphQLDescription("skriva ut en test-mail")]
     public Email GetEmailAddress([GraphQLType(typeof(EmailAddressType))] string Email) =>
         new()
         {
