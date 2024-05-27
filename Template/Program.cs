@@ -5,13 +5,13 @@ builder.Services
 
 
     .AddMutationType(m => m.Name("Mutation"))
-    //.AddType<TestMutation>()
     .AddType<BookMutation>()
     .AddMutationConventions(applyToAllMutations: true)
 
     .AddQueryType(q => q.Name("Query"))
     .AddType<TestQuery>()
     .AddType<BookQuery>()
+    .AddType<GetAuthorQuery>()
     .AddDefaultTransactionScopeHandler();
 
 

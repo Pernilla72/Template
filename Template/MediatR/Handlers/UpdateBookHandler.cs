@@ -1,5 +1,9 @@
 ﻿namespace Template.MediatR.Handlers;
 
+
+//En Handler som heter UpdateBookHandler.Den tar in en request från UpdateBookCommand och returnerar ett
+//det id som man valt att radera, i detta exempel är det id 3.
+
 public class UpdateBookHandler : IRequestHandler<UpdateBookCommand, Book>
 {
     private readonly List<Book> _booksOne = new List<Book>
