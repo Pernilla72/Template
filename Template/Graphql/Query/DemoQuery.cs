@@ -1,11 +1,10 @@
-﻿namespace Template.Graphql.Query
+﻿namespace Template.Graphql.Query;
+
+[ExtendObjectType("Query")]
+public class DemoQuery
 {
-    [ExtendObjectType("Query")]
-    public class DemoQuery
+    public async Task<Demo> GetDemo([Service] ISender mediator, int id)
     {
-        public async Task<Id> GetDemo([Service] ISender mediator, int id)
-        {
-            return await mediator.Send(new GetDemoQuery(id));
-        }
+        return await mediator.Send(new GetDemoQuery(id));
     }
 }

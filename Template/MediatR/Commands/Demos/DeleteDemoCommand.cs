@@ -1,6 +1,10 @@
-﻿namespace Template.MediatR.Commands.Demos
+﻿namespace Template.MediatR.Commands.Demos;
+
+public class DeleteDemoCommand : IRequestWrapper<Demo>
 {
-    public class DeleteDemoCommand
+    public DeleteDemoCommand(int id)
     {
+        Id = id;
     }
+    public int Id { get; }
 }

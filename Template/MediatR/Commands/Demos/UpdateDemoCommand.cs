@@ -1,6 +1,6 @@
-﻿namespace Template.MediatR.Commands.Demos
+﻿namespace Template.MediatR.Commands.Demos;
+
+public class UpdateDemoCommand : IRequestWrapper<Demo>
 {
-    public class UpdateDemoCommand
-    {
-    }
+    public int Id { get; set; }   
 }

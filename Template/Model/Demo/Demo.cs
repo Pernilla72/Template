@@ -1,7 +1,6 @@
-﻿namespace Template.Model.Demo
+﻿namespace Template.Model.Demo;
+
+public class Demo
 {
-    public class Demo
-    {
-        public int DemoId { get; set; }
-    }
+    public int Id { get; set; }
 }

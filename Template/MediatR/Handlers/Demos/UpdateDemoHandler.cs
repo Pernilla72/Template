@@ -1,6 +1,9 @@
-﻿namespace Template.MediatR.Handlers.Demos
+﻿namespace Template.MediatR.Handlers.Demos;
+
+public class UpdateDemoHandler : IHandlerWrapper<UpdateDemoCommand, Demo>
 {
-    public class UpdateDemoHandler
+    public Task<Demo> Handle(UpdateDemoCommand request, CancellationToken cancellationToken)
     {
+        throw new NotImplementedException();
     }
 }
