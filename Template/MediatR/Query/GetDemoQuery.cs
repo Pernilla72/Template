@@ -1,6 +1,6 @@
 ﻿namespace Template.MediatR.Query;
 
-public class GetDemoQuery : IRequestWrapper<Id>
+public class GetDemoQuery : IRequestWrapper<Demo>
 {
     public int Id { get; set; }
 

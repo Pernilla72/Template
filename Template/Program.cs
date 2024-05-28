@@ -1,18 +1,8 @@
+
+
+using static Template.Middlewares.ExceptionHandlerMiddleware;
+
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services
-    .AddGraphQLServer()
-
-
-    .AddMutationType(m => m.Name("Mutation"))
-    .AddType<BookMutation>()
-    .AddMutationConventions(applyToAllMutations: true)
-
-    .AddQueryType(q => q.Name("Query"))
-    .AddType<TestQuery>()
-    .AddType<BookQuery>()
-    .AddType<GetAuthorQuery>()
-    .AddDefaultTransactionScopeHandler();
 
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
@@ -20,7 +10,15 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.Get
 
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
+//builder.Services.ConfigureAuthentication(applicationName, SettingsService);
+builder.Services.ConfigureLogWriter();
+
+
+builder.Services.ConfigureGraphQlServices();
+
+builder.Services.AddHttpResponseFormatter<CustomHttpResponseFormatter>();
 
 var app = builder.Build();
 app.MapGraphQL();

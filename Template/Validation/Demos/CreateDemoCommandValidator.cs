@@ -6,6 +6,6 @@ public class CreateDemoCommandValidator : AbstractValidator<CreateDemoCommand>
     {
         RuleFor(x => x.Id)
             .NotEmpty()
-            .WithMessage("id is mandatory");
+            .WithMessage("Id is mandatory");
     }
 }
